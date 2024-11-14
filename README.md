@@ -131,10 +131,15 @@ For the email system to work correctly, make sure to configure the following in 
    EMAIL_SERVICE=gmail
    EMAIL_USER=your-email@gmail.com
    EMAIL_PASS=your-app-specific-password
+```
 
    Replace your-email@gmail.com with your actual Gmail address and your-app-specific-password with the generated app-specific password.
-    
+
+### 5\. **Sample Email Notification
+Once the email is sent, the recipient will receive an email with the following format:
+
 
         
+<img width="1176" alt="Screenshot 2024-11-15 at 2 22 12 AM" src="https://github.com/user-attachments/assets/13fce61c-6484-48b1-a59c-87240d312189">
 
 
