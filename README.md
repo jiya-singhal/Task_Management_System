@@ -1,6 +1,6 @@
-# Task Management System
+# Task Management System Backend API
 
-This project is a backend API for a Task Management System built with Node.js, Express, and MongoDB. The system allows users to create, update, and manage tasks with various features such as prioritization, deadlines, team collaboration, recurring tasks, and real-time updates using WebSockets. Authentication is managed through JWT, with role-based access control (RBAC) for team roles.
+This project is a backend API for a Task Management System built with Node.js, Express, and MongoDB. The system allows users to create, update, and manage tasks with features such as prioritization, deadlines, task dependencies, recurring tasks, and email notifications. It also supports team functionality, enabling collaboration between users, and includes role-based access control (RBAC) to manage permissions within teams. The API is secured with JWT authentication and includes functionality for real-time updates using WebSockets.
 
 ## Features
 
