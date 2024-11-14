@@ -23,7 +23,7 @@ This project is a backend API for a Task Management System built with Node.js, E
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/task-management-system.git
+   git clone [https://github.com/your-username/task-management-system.git](https://github.com/jiya-singhal/Task_Management_System.git)
    cd task-management-system
 
 2. Install dependencies:
