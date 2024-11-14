@@ -109,7 +109,7 @@ The email notification system is triggered when a task is created or updated. Th
 To test the email system:
 
 1.   ```bash
- utils/testEmail.js
+       utils/testEmail.js
     
 2.  **Expected Outcome**:
     
