@@ -125,9 +125,15 @@ For the email system to work correctly, make sure to configure the following in 
     
     *   If you're using Gmail and have 2-factor authentication (2FA) enabled, create an **App-Specific Password** through your Google account settings. This password is used to log in securely to your Gmail account.
         
-2.  envCopy codeEMAIL\_SERVICE=gmailEMAIL\_USER=your-email@gmail.comEMAIL\_PASS=your-app-specific-passwordReplace your-email@gmail.com with your actual Gmail address and your-app-specific-password with the generated app-specific password.
+2.  env
+   ```bash
+   EMAIL_SERVICE=gmail
+   EMAIL_USER=your-email@gmail.com
+   EMAIL_PASS=your-app-specific-password
+
+   Replace your-email@gmail.com with your actual Gmail address and your-app-specific-password with the generated app-specific password.
     
-    *   Ensure the following environment variables are set correctly in your .env file:
+
         
 
 
