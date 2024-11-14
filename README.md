@@ -42,6 +42,20 @@ This project is a backend API for a Task Management System built with Node.js, E
    npm start
 5. The server will be running at http://localhost:8080
 
+
+### API Documentation
+
+To test and explore the API endpoints, you can import the Postman collection provided in this repository.
+
+#### Steps to Import
+
+1. Open Postman.
+2. Click on **Import** in the top left corner.
+3. Select **Upload Files** and navigate to the `docs/TaskManagementSystem.postman_collection.json` file in this repository.
+4. Click **Import** to add the collection to Postman.
+
+You can now use this collection to make requests and view example responses for the Task Management System API.
+
 ## API Endpoints
 ### User Endpoints
 - **POST /api/users/register**: Register a new user.
@@ -68,3 +82,52 @@ This project is a backend API for a Task Management System built with Node.js, E
 - **JWT for user authentication**
 - **Nodemailer for email notifications**
 - **WebSocket for real-time updates**
+
+
+
+
+ Email Notification Feature
+------------------------------------------------
+
+This application includes a feature to send email notifications related to tasks, such as task creation and updates. It uses **Nodemailer** to send emails via Gmail.
+
+### 1\. **Setting Up Email Notifications**
+
+The system automatically sends email notifications for key task events, such as:
+
+*   **Task Creation**: When a new task is created, an email will be sent to the assigned user with the task details.
+    
+*   **Task Completion** (Optional): You can configure email notifications for task completion.
+    
+
+### 2\. **How It Works**
+
+The email notification system is triggered when a task is created or updated. The email is sent using the Gmail service and requires an **app-specific password** (if you have 2-factor authentication enabled in your Google account).
+
+### 3\. **Testing Email Notifications**
+
+To test the email system:
+
+1.  bashCopy codenode utils/testEmail.js
+    
+2.  **Expected Outcome**:
+    
+    *   You should receive a test email at the address specified in your .env file (under EMAIL\_USER).
+        
+    *   The email will confirm that the system is working and notify you that an email was successfully sent.
+        
+
+### 4\. **Required Configuration**
+
+For the email system to work correctly, make sure to configure the following in your .env file:
+
+1.  **Create an App-Specific Password**:
+    
+    *   If you're using Gmail and have 2-factor authentication (2FA) enabled, create an **App-Specific Password** through your Google account settings. This password is used to log in securely to your Gmail account.
+        
+2.  envCopy codeEMAIL\_SERVICE=gmailEMAIL\_USER=your-email@gmail.comEMAIL\_PASS=your-app-specific-passwordReplace your-email@gmail.com with your actual Gmail address and your-app-specific-password with the generated app-specific password.
+    
+    *   Ensure the following environment variables are set correctly in your .env file:
+        
+
+

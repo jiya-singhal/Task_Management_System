@@ -1,18 +1,17 @@
-const nodemailer = require('nodemailer'); 
+require('dotenv').config();  // Load environment variables from .env file
+const nodemailer = require('nodemailer');
 
-// Example function to send email notifications
 const sendEmailNotification = async (to, subject, message) => {
-    // Configure your email transporter
     const transporter = nodemailer.createTransport({
-        service: 'gmail', // or your email provider
+        service: 'gmail',  // Using Gmail's SMTP server
         auth: {
-            user: 'your-email@example.com', // your email
-            pass: 'your-email-password' // your email password
+            user: process.env.EMAIL_USER,  // Your Gmail email address
+            pass: process.env.EMAIL_PASS   // Your 16-character app password
         }
     });
 
     const mailOptions = {
-        from: 'your-email@example.com',
+        from: process.env.EMAIL_USER,
         to,
         subject,
         text: message,

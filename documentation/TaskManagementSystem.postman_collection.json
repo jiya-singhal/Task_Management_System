@@ -1,0 +1,1780 @@
+{
+	"info": {
+		"_postman_id": "589641e5-d577-4fb8-9d2c-27b9419eb1f2",
+		"name": "TaskManagementSystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36707641"
+	},
+	"item": [
+		{
+			"name": "User Registration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"John\",\n  \"email\": \"johndoe@gmail.com\",\n  \"password\": \"password123\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3006/api/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				},
+				"description": "### Register User\n\nThis endpoint allows the client to register a new user.\n\n#### Request Body\n\n- name (string, required): The name of the user.\n    \n- email (string, required): The email of the user.\n    \n- password (string, required): The password for the user.\n    \n\n#### Response\n\nThe response will be a JSON object with the following properties:\n\n- message (string): A message related to the registration process.\n    \n- newUser (object): An object representing the newly registered user with the following properties:\n    \n    - name (string): The name of the user.\n        \n    - email (string): The email of the user.\n        \n    - password (string): The password of the user.\n        \n    - teams (array): An array of teams associated with the user.\n        \n    - _id (string): The unique identifier of the user.\n        \n    - __v (number): The version of the user object.\n        \n\n#### Example Response\n\n``` json\n{\n    \"message\": \"\",\n    \"newUser\": {\n        \"name\": \"\",\n        \"email\": \"\",\n        \"password\": \"\",\n        \"teams\": [],\n        \"_id\": \"\",\n        \"__v\": 0\n    }\n}\n\n ```\n\nThis endpoint allows the client to register a new user.\n\n#### Request Body\n\n- `name` (string) - The name of the user.\n    \n- `email` (string) - The email of the user.\n    \n- `password` (string) - The password for the user.\n    \n\n#### Response\n\nUpon successful registration, the server responds with a status code of 201 and a JSON object containing the following:\n\n- `message` (string) - A message indicating the outcome of the registration process.\n    \n- `newUser`\n    \n    - `name` (string) - The name of the registered user.\n        \n    - `email` (string) - The email of the registered user.\n        \n    - `password` (string) - The password of the registered user.\n        \n    - `teams` (array) - An array of teams associated with the user.\n        \n    - `_id` (string) - The unique identifier of the registered user.\n        \n    - `__v` (number) - Version key for the user object.\n        \n\n#### Example\n\n``` json\n{\n    \"message\": \"User successfully registered\",\n    \"newUser\": {\n        \"name\": \"John\",\n        \"email\": \"johndoe@gmail.com\",\n        \"password\": \"********\",\n        \"teams\": [],\n        \"_id\": \"5f8d7e5e2f7d8c001c8e8e6c\",\n        \"__v\": 0\n    }\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "User Registration",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John\",\n  \"email\": \"johndoe@gmail.com\",\n  \"password\": \"password123\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3006/api/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "222"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"de-RHOKXDSN2+Brf8MIcTJ3AmXnd0w\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 14 Nov 2024 10:46:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User registered successfully\",\n    \"newUser\": {\n        \"name\": \"John\",\n        \"email\": \"johndoe@gmail.com\",\n        \"password\": \"$2b$10$7SIVmZFMcL1ZD8EJPjLa9.fULBXVXsOXHZtRTyiIIeMu0x6skKLae\",\n        \"teams\": [],\n        \"_id\": \"6735d50553c1f994010dff57\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"John\",\n  \"email\": \"johndoe@gmail.com\",\n  \"password\": \"password123\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3006/api/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				},
+				"description": "### API Request Description\n\nThis endpoint allows users to log in by providing their name, email, and password in the request body.\n\n#### Request Body\n\n- `name` (text): The name of the user.\n    \n- `email` (text): The email address of the user.\n    \n- `password` (text): The password for the user's account.\n    \n\n#### Response\n\nUpon a successful login, the server responds with a status code of 200 and a JSON object containing a token and user details. The token is used for authentication, and the user object includes the user's ID, name, email, password, and teams.\n\nExample response:\n\n``` json\n{\n    \"token\": \"\",\n    \"user\": {\n        \"_id\": \"\",\n        \"name\": \"\",\n        \"email\": \"\",\n        \"password\": \"\",\n        \"teams\": [],\n        \"__v\": 0\n    }\n}\n\n ```\n\nThis endpoint allows users to log in by providing their name, email, and password.\n\n#### Request Body\n\n- name (text, required): The name of the user.\n    \n- email (text, required): The email address of the user.\n    \n- password (text, required): The password for the user's account.\n    \n\n#### Response\n\nUpon successful login, the server responds with a status code of 200 and a JSON object containing a token and user details. The token is provided for authentication, and the user object includes the user's ID, name, email, password, and teams they are associated with.\n\nExample response:\n\n``` json\n{\n    \"token\": \"\",\n    \"user\": {\n        \"_id\": \"\",\n        \"name\": \"\",\n        \"email\": \"\",\n        \"password\": \"\",\n        \"teams\": [],\n        \"__v\": 0\n    }\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "User Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John\",\n  \"email\": \"johndoe@gmail.com\",\n  \"password\": \"password123\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3006/api/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "365"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"16d-TLyliSMNvd7iD4Omcobh6WaZ6dI\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 14 Nov 2024 19:00:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1ZDUwNTUzYzFmOTk0MDEwZGZmNTciLCJpYXQiOjE3MzE2MTA4MTgsImV4cCI6MTczMTYxNDQxOH0.XWRsCLd43DERKWQtcYKUT_rRS_FTlLj_LKGDEi6jUBw\",\n    \"user\": {\n        \"_id\": \"6735d50553c1f994010dff57\",\n        \"name\": \"John\",\n        \"email\": \"johndoe@gmail.com\",\n        \"password\": \"$2b$10$7SIVmZFMcL1ZD8EJPjLa9.fULBXVXsOXHZtRTyiIIeMu0x6skKLae\",\n        \"teams\": [],\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Current User Details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1ZDUwNTUzYzFmOTk0MDEwZGZmNTciLCJpYXQiOjE3MzE1ODEzODgsImV4cCI6MTczMTU4NDk4OH0.Xc9pIFwxTv563e6fSuntD6Er5PfO9YHHT6XGjQAOLDs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3006/api/users/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"users",
+						"me"
+					]
+				},
+				"description": "The endpoint retrieves the details of the authenticated user. The response for this request can be documented as a JSON schema as follows:\n\n``` json\n{\n  \"_id\": \"\",\n  \"name\": \"\",\n  \"email\": \"\",\n  \"teams\": [],\n  \"__v\": 0\n}\n\n ```\n\nThis endpoint retrieves the details of the current user.\n\n#### Request\n\n- Method: GET\n    \n- URL: `http://localhost:3006/api/users/me`\n    \n\n#### Response\n\n- Status: 200\n    \n- Content-Type: application/json\n    \n\nExample response body:\n\n``` json\n{\n    \"_id\": \"\",\n    \"name\": \"\",\n    \"email\": \"\",\n    \"teams\": [],\n    \"__v\": 0\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "Current User Details",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1ZDUwNTUzYzFmOTk0MDEwZGZmNTciLCJpYXQiOjE3MzE1ODEzODgsImV4cCI6MTczMTU4NDk4OH0.Xc9pIFwxTv563e6fSuntD6Er5PfO9YHHT6XGjQAOLDs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3006/api/users/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"api",
+								"users",
+								"me"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "95"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5f-RzFjkdlzj1ekRMMw1MCSprrw9XY\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 14 Nov 2024 10:54:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"6735d50553c1f994010dff57\",\n    \"name\": \"John\",\n    \"email\": \"johndoe@gmail.com\",\n    \"teams\": [],\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Team",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1ZDUwNTUzYzFmOTk0MDEwZGZmNTciLCJpYXQiOjE3MzE2MDg1ODQsImV4cCI6MTczMTYxMjE4NH0.hu4KzD9vvxY3mAhX3FNSOnw5IA1y9c2ejAx4ukreqgA",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Development Team\",\n  \"members\": [\n    { \"user\": \"6735c9fe53c1f994010dff51\", \"role\": \"Admin\" }\n  ]\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3006/api/teams",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"teams"
+					]
+				},
+				"description": "### Create a New Team\n\nThis endpoint allows you to create a new team.\n\n#### Request Body\n\n- name (string, required): The name of the team.\n    \n- members (array, required): An array of team members, each containing user and role.\n    \n\nExample:\n\n``` json\n{\n  \"name\": \"Development Team\",\n  \"members\": [\n    {\n      \"user\": \"6735c9fe53c1f994010dff51\",\n      \"role\": \"Admin\"\n    }\n  ]\n}\n\n ```\n\n#### Response\n\nThe response will be in JSON format with the following schema:\n\n``` json\n{\n  \"name\": \"\",\n  \"owner\": \"\",\n  \"members\": [\n    {\n      \"user\": \"\",\n      \"role\": \"\",\n      \"_id\": \"\"\n    }\n  ],\n  \"_id\": \"\",\n  \"__v\": 0\n}\n\n ```\n\nExample Response:\n\n``` json\n{\n  \"name\": \"\",\n  \"owner\": \"\",\n  \"members\": [\n    {\n      \"user\": \"\",\n      \"role\": \"\",\n      \"_id\": \"\"\n    }\n  ],\n  \"_id\": \"\",\n  \"__v\": 0\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "Create Team",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1ZDUwNTUzYzFmOTk0MDEwZGZmNTciLCJpYXQiOjE3MzE2MDg1ODQsImV4cCI6MTczMTYxMjE4NH0.hu4KzD9vvxY3mAhX3FNSOnw5IA1y9c2ejAx4ukreqgA",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Development Team\",\n  \"members\": [\n    { \"user\": \"6735c9fe53c1f994010dff51\", \"role\": \"Admin\" }\n  ]\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3006/api/teams",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"api",
+								"teams"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "283"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"11b-Yc9lktpLU8dt0FBFHEE8bdBbAK0\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 14 Nov 2024 18:29:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Development Team\",\n    \"owner\": \"6735d50553c1f994010dff57\",\n    \"members\": [\n        {\n            \"user\": \"6735d50553c1f994010dff57\",\n            \"role\": \"Owner\",\n            \"_id\": \"67364183a60e8e9e397dc400\"\n        },\n        {\n            \"user\": \"6735c9fe53c1f994010dff51\",\n            \"role\": \"Admin\",\n            \"_id\": \"67364183a60e8e9e397dc401\"\n        }\n    ],\n    \"_id\": \"67364183a60e8e9e397dc3ff\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Team Details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1ZDUwNTUzYzFmOTk0MDEwZGZmNTciLCJpYXQiOjE3MzE2MDg1ODQsImV4cCI6MTczMTYxMjE4NH0.hu4KzD9vvxY3mAhX3FNSOnw5IA1y9c2ejAx4ukreqgA",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3006/api/teams/673611d55ed9e193f5962ead",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"teams",
+						"673611d55ed9e193f5962ead"
+					]
+				},
+				"description": "### Get Team Details\n\nThis endpoint retrieves details of a specific team based on the provided team ID.\n\n#### Request\n\n- Method: GET\n    \n- URL: `http://localhost:3006/api/teams/673611d55ed9e193f5962ead`\n    \n\n#### Response\n\n- Status: 200\n    \n- Content-Type: application/json\n    \n\nThe response body contains the details of the team including the team ID, name, owner, and members with their respective user, role, and ID. An example response body is as follows:\n\n``` json\n{\n    \"_id\": \"\",\n    \"name\": \"\",\n    \"owner\": \"\",\n    \"members\": [\n        {\n            \"user\": \"\",\n            \"role\": \"\",\n            \"_id\": \"\"\n        }\n    ],\n    \"__v\": 0\n}\n\n ```\n\nThis endpoint retrieves details of a specific team based on the provided team ID.\n\n#### Request\n\n- Method: GET\n    \n- URL: `http://localhost:3006/api/teams/673611d55ed9e193f5962ead`\n    \n\n#### Response\n\n- Status: 200\n    \n- Content-Type: application/json\n    \n\n``` json\n{\n  \"_id\": \"\",\n  \"name\": \"\",\n  \"owner\": \"\",\n  \"members\": [\n    {\n      \"user\": \"\",\n      \"role\": \"\",\n      \"_id\": \"\"\n    }\n  ],\n  \"__v\": 0\n}\n\n ```\n\nThe response body contains the details of the team including the team ID, name, owner, and members with their respective user, role, and ID.\n\n``` json\n{\n  \"_id\": \"string\",\n  \"name\": \"string\",\n  \"owner\": \"string\",\n  \"members\": [\n    {\n      \"user\": \"string\",\n      \"role\": \"string\",\n      \"_id\": \"string\"\n    }\n  ],\n  \"__v\": 0\n}\n\n ```\n\nThis endpoint retrieves details of a specific team based on the provided team ID.\n\n#### Request\n\n- Method: GET\n    \n- URL: `http://localhost:3006/api/teams/673611d55ed9e193f5962ead`\n    \n\n#### Response\n\n- Status: 200\n    \n- Content-Type: application/json\n    \n- { \"_id\": \"\", \"name\": \"\", \"owner\": \"\", \"members\": \\[ { \"user\": \"\", \"role\": \"\", \"_id\": \"\" } \\], \"__v\": 0}  \n    The response body contains the details of the team including the team ID, name, owner, and members with their respective user, role, and ID."
+			},
+			"response": [
+				{
+					"name": "Get Team Details",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1ZDUwNTUzYzFmOTk0MDEwZGZmNTciLCJpYXQiOjE3MzE2MDg1ODQsImV4cCI6MTczMTYxMjE4NH0.hu4KzD9vvxY3mAhX3FNSOnw5IA1y9c2ejAx4ukreqgA",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3006/api/teams/673611d55ed9e193f5962ead",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"api",
+								"teams",
+								"673611d55ed9e193f5962ead"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "536"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"218-/QXvD4JW1xOhQ4XY+RCxvIkS52Y\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 14 Nov 2024 18:31:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"673611d55ed9e193f5962ead\",\n    \"name\": \"Development Team\",\n    \"owner\": \"6735d50553c1f994010dff57\",\n    \"members\": [\n        {\n            \"user\": \"6735d50553c1f994010dff57\",\n            \"role\": \"Owner\",\n            \"_id\": \"673611d55ed9e193f5962eae\"\n        },\n        {\n            \"user\": \"6735c9fe53c1f994010dff51\",\n            \"role\": \"Admin\",\n            \"_id\": \"673611d55ed9e193f5962eaf\"\n        },\n        {\n            \"user\": \"6735d50553c1f994010dff57\",\n            \"role\": \"Owner\",\n            \"_id\": \"67363c845ed9e193f5962ebd\"\n        },\n        {\n            \"user\": \"6735c9fe53c1f994010dff51\",\n            \"role\": \"Admin\",\n            \"_id\": \"67363c845ed9e193f5962ebe\"\n        },\n        {\n            \"user\": \"67361d015ed9e193f5962eb6\",\n            \"role\": \"Member\",\n            \"_id\": \"67363c845ed9e193f5962ebf\"\n        }\n    ],\n    \"__v\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Members",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1ZDUwNTUzYzFmOTk0MDEwZGZmNTciLCJpYXQiOjE3MzE2MDc0NDQsImV4cCI6MTczMTYxMTA0NH0.WbdmN_v59WiRAJn03TPmmPZx-yNDwwr8bqZPRmHew3E",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Updated Development Team\",\n  \"members\": [\n    {\n      \"user\": \"6735d50553c1f994010dff57\",\n      \"role\": \"Owner\"\n    },\n    {\n      \"user\": \"6735c9fe53c1f994010dff51\",\n      \"role\": \"Admin\"\n    },\n    {\n      \"user\": \"67361d015ed9e193f5962eb6\",\n      \"role\": \"Member\"\n    }\n  ]\n} \n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3006/api/teams/673611d55ed9e193f5962ead/add-members",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"teams",
+						"673611d55ed9e193f5962ead",
+						"add-members"
+					]
+				},
+				"description": "### Update Team Members\n\nThis endpoint allows updating the members of a specific team.\n\n#### Request Body\n\n- name (string, required): The updated name of the team.\n    \n- members (array, required): An array of objects containing the user ID and role for each member to be added.\n    \n\nExample:\n\n``` json\n{\n  \"name\": \"Updated Development Team\",\n  \"members\": [\n    {\n      \"user\": \"6735d50553c1f994010dff57\",\n      \"role\": \"Owner\"\n    }\n  ]\n}\n\n ```\n\n#### Response\n\nThe response for this request can be represented as a JSON schema:\n\n``` json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"message\": {\n      \"type\": \"string\"\n    },\n    \"team\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"_id\": {\n          \"type\": \"string\"\n        },\n        \"name\": {\n          \"type\": \"string\"\n        },\n        \"owner\": {\n          \"type\": \"string\"\n        },\n        \"members\": {\n          \"type\": \"array\",\n          \"items\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"user\": {\n                \"type\": \"string\"\n              },\n              \"role\": {\n                \"type\": \"string\"\n              },\n              \"_id\": {\n                \"type\": \"string\"\n              }\n            }\n          }\n        },\n        \"__v\": {\n          \"type\": \"integer\"\n        }\n      }\n    }\n  }\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "Add Members",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1ZDUwNTUzYzFmOTk0MDEwZGZmNTciLCJpYXQiOjE3MzE2MDc0NDQsImV4cCI6MTczMTYxMTA0NH0.WbdmN_v59WiRAJn03TPmmPZx-yNDwwr8bqZPRmHew3E",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Updated Development Team\",\n  \"members\": [\n    {\n      \"user\": \"6735d50553c1f994010dff57\",\n      \"role\": \"Owner\"\n    },\n    {\n      \"user\": \"6735c9fe53c1f994010dff51\",\n      \"role\": \"Admin\"\n    },\n    {\n      \"user\": \"67361d015ed9e193f5962eb6\",\n      \"role\": \"Member\"\n    }\n  ]\n} \n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3006/api/teams/673611d55ed9e193f5962ead/add-members",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"api",
+								"teams",
+								"673611d55ed9e193f5962ead",
+								"add-members"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "584"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"248-T0tr0G8AGQVCT0jIjm1phV98tWo\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 14 Nov 2024 18:08:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Members added successfully\",\n    \"team\": {\n        \"_id\": \"673611d55ed9e193f5962ead\",\n        \"name\": \"Development Team\",\n        \"owner\": \"6735d50553c1f994010dff57\",\n        \"members\": [\n            {\n                \"user\": \"6735d50553c1f994010dff57\",\n                \"role\": \"Owner\",\n                \"_id\": \"673611d55ed9e193f5962eae\"\n            },\n            {\n                \"user\": \"6735c9fe53c1f994010dff51\",\n                \"role\": \"Admin\",\n                \"_id\": \"673611d55ed9e193f5962eaf\"\n            },\n            {\n                \"user\": \"6735d50553c1f994010dff57\",\n                \"role\": \"Owner\",\n                \"_id\": \"67363c845ed9e193f5962ebd\"\n            },\n            {\n                \"user\": \"6735c9fe53c1f994010dff51\",\n                \"role\": \"Admin\",\n                \"_id\": \"67363c845ed9e193f5962ebe\"\n            },\n            {\n                \"user\": \"67361d015ed9e193f5962eb6\",\n                \"role\": \"Member\",\n                \"_id\": \"67363c845ed9e193f5962ebf\"\n            }\n        ],\n        \"__v\": 1\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1ZDUwNTUzYzFmOTk0MDEwZGZmNTciLCJpYXQiOjE3MzE2MDkyMDUsImV4cCI6MTczMTYxMjgwNX0.o3Wv7R5nwHtoTZPnIQdLxNRgFCwPfb_AC3Bl-aOFGY0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Complete API Integration\",\n    \"description\": \"Implement and test all required API endpoints for the application.\",\n    \"priority\": \"high\",\n    \"dueDate\": \"2024-12-01\",\n    \"assignedTo\": \"6735c9fe53c1f994010dff51\",  // ID of the Admin user in the team\n    \"team\": \"67364183a60e8e9e397dc3ff\"         // ID of the Development Team\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3006/api/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"tasks"
+					]
+				},
+				"description": "### Create a New Task\n\nThis endpoint allows the client to create a new task.\n\n#### Request Body\n\n- title (string, required): The title of the task.\n    \n- description (string, required): Description of the task.\n    \n- priority (string, required): Priority level of the task.\n    \n- dueDate (string, required): Due date for the task.\n    \n- assignedTo (string, required): ID of the user to whom the task is assigned.\n    \n- team (string, required): ID of the team to which the task belongs.\n    \n\n#### Example Request\n\n``` json\n{\n    \"title\": \"Complete API Integration\",\n    \"description\": \"Implement and test all required API endpoints for the application.\",\n    \"priority\": \"high\",\n    \"dueDate\": \"2024-12-01\",\n    \"assignedTo\": \"6735c9fe53c1f994010dff51\",\n    \"team\": \"67364183a60e8e9e397dc3ff\"\n}\n\n ```\n\n#### Response (201 - Created)\n\nThe response body is a JSON schema representing the newly created task, with the following properties:\n\n- title (string): The title of the task.\n    \n- description (string): Description of the task.\n    \n- priority (string): Priority level of the task.\n    \n- dueDate (string): Due date for the task.\n    \n- completed (boolean): Indicates if the task is completed.\n    \n- assignedTo (array): Array of user IDs to whom the task is assigned.\n    \n- team (string): ID of the team to which the task belongs.\n    \n- dependencies (array): Array of task dependencies.\n    \n- _id (string): Unique ID of the task.\n    \n- history (array): Array of task history.\n    \n- __v (number): Version of the task document.\n    \n\n#### Example Response\n\n``` json\n{\n    \"title\": \"\",\n    \"description\": \"\",\n    \"priority\": \"\",\n    \"dueDate\": \"\",\n    \"completed\": true,\n    \"assignedTo\": [\"\"],\n    \"team\": \"\",\n    \"dependencies\": [],\n    \"_id\": \"\",\n    \"history\": [],\n    \"__v\": 0\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "Create Task",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1ZDUwNTUzYzFmOTk0MDEwZGZmNTciLCJpYXQiOjE3MzE2MDkyMDUsImV4cCI6MTczMTYxMjgwNX0.o3Wv7R5nwHtoTZPnIQdLxNRgFCwPfb_AC3Bl-aOFGY0",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Complete API Integration\",\n    \"description\": \"Implement and test all required API endpoints for the application.\",\n    \"priority\": \"high\",\n    \"dueDate\": \"2024-12-01\",\n    \"assignedTo\": \"6735c9fe53c1f994010dff51\",  // ID of the Admin user in the team\n    \"team\": \"67364183a60e8e9e397dc3ff\"         // ID of the Development Team\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3006/api/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"api",
+								"tasks"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "340"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"154-Xev3wA6TNyHVVIMjuofAiTU4QZY\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 14 Nov 2024 18:37:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"Complete API Integration\",\n    \"description\": \"Implement and test all required API endpoints for the application.\",\n    \"priority\": \"high\",\n    \"dueDate\": \"2024-12-01T00:00:00.000Z\",\n    \"completed\": false,\n    \"assignedTo\": [\n        \"6735c9fe53c1f994010dff51\"\n    ],\n    \"team\": \"67364183a60e8e9e397dc3ff\",\n    \"dependencies\": [],\n    \"_id\": \"6736434f667f6ff587c178ef\",\n    \"history\": [],\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Task with filter",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1ZDUwNTUzYzFmOTk0MDEwZGZmNTciLCJpYXQiOjE3MzE2MDkyMDUsImV4cCI6MTczMTYxMjgwNX0.o3Wv7R5nwHtoTZPnIQdLxNRgFCwPfb_AC3Bl-aOFGY0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3006/api/tasks?status=incomplete&priority=high&team=67364183a60e8e9e397dc3ff",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "incomplete"
+						},
+						{
+							"key": "priority",
+							"value": "high"
+						},
+						{
+							"key": "team",
+							"value": "67364183a60e8e9e397dc3ff"
+						}
+					]
+				},
+				"description": "### GET /api/tasks\n\nThis endpoint retrieves tasks based on the specified filters.\n\n#### Request\n\n- Method: GET\n    \n- URL: `http://localhost:3006/api/tasks`\n    \n- Query Parameters:\n    \n    - status (string, required): Filter tasks by status (e.g. incomplete).\n        \n    - priority (string, required): Filter tasks by priority (e.g. high).\n        \n    - team (string, required): Filter tasks by team ID (e.g. 67364183a60e8e9e397dc3ff).\n        \n\n#### Response\n\nThe response for this request is an array of task objects in JSON format. The structure of each task object is as follows:\n\n``` json\n[\n    {\n        \"_id\": \"\",\n        \"title\": \"\",\n        \"description\": \"\",\n        \"priority\": \"\",\n        \"dueDate\": \"\",\n        \"completed\": true,\n        \"assignedTo\": [\n            {\n                \"_id\": \"\",\n                \"name\": \"\",\n                \"email\": \"\",\n                \"password\": \"\",\n                \"teams\": [],\n                \"__v\": 0\n            }\n        ],\n        \"team\": {\n            \"_id\": \"\",\n            \"name\": \"\",\n            \"owner\": \"\",\n            \"members\": [\n                {\n                    \"user\": \"\",\n                    \"role\": \"\",\n                    \"_id\": \"\"\n                }\n            ],\n            \"__v\": 0\n        },\n        \"dependencies\": [],\n        \"history\": [],\n        \"__v\": 0\n    }\n]\n\n ```"
+			},
+			"response": [
+				{
+					"name": "Get Task with filter",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1ZDUwNTUzYzFmOTk0MDEwZGZmNTciLCJpYXQiOjE3MzE2MDkyMDUsImV4cCI6MTczMTYxMjgwNX0.o3Wv7R5nwHtoTZPnIQdLxNRgFCwPfb_AC3Bl-aOFGY0",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3006/api/tasks?status=incomplete&priority=high&team=67364183a60e8e9e397dc3ff",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"api",
+								"tasks"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "incomplete"
+								},
+								{
+									"key": "priority",
+									"value": "high"
+								},
+								{
+									"key": "team",
+									"value": "67364183a60e8e9e397dc3ff"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "748"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2ec-O/Il7nmh5AXqJJJqiAULjKmdBlM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 14 Nov 2024 18:44:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"6736434f667f6ff587c178ef\",\n        \"title\": \"Complete API Integration\",\n        \"description\": \"Implement and test all required API endpoints for the application.\",\n        \"priority\": \"high\",\n        \"dueDate\": \"2024-12-01T00:00:00.000Z\",\n        \"completed\": false,\n        \"assignedTo\": [\n            {\n                \"_id\": \"6735c9fe53c1f994010dff51\",\n                \"name\": \"John Doe\",\n                \"email\": \"johndoe@example.com\",\n                \"password\": \"$2b$10$tXImMYEwwYZQm9UkAPkK3.NH0urJDAdSL2gcVjEIIFUBQOmuA6fey\",\n                \"teams\": [],\n                \"__v\": 0\n            }\n        ],\n        \"team\": {\n            \"_id\": \"67364183a60e8e9e397dc3ff\",\n            \"name\": \"Development Team\",\n            \"owner\": \"6735d50553c1f994010dff57\",\n            \"members\": [\n                {\n                    \"user\": \"6735d50553c1f994010dff57\",\n                    \"role\": \"Owner\",\n                    \"_id\": \"67364183a60e8e9e397dc400\"\n                },\n                {\n                    \"user\": \"6735c9fe53c1f994010dff51\",\n                    \"role\": \"Admin\",\n                    \"_id\": \"67364183a60e8e9e397dc401\"\n                }\n            ],\n            \"__v\": 0\n        },\n        \"dependencies\": [],\n        \"history\": [],\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Update a Task",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1ZDUwNTUzYzFmOTk0MDEwZGZmNTciLCJpYXQiOjE3MzE2MTAxMzcsImV4cCI6MTczMTYxMzczN30.SdI8iEfZi1tn6R3WtPRrTHnaQDm5OLKzKKLX3IVNjx0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Updated Task Title\",\n    \"description\": \"Updated task description\",\n    \"priority\": \"medium\",\n    \"dueDate\": \"2024-12-15T00:00:00.000Z\",\n    \"assignedTo\": \"6735d50553c1f994010dff57\",\n    \"team\": \"673611d55ed9e193f5962ead\",\n    \"dependencies\": []\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3006/api/tasks/6736434f667f6ff587c178ef",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"tasks",
+						"6736434f667f6ff587c178ef"
+					]
+				},
+				"description": "### Update Task Details\n\nThis API endpoint allows the client to update the details of a specific task identified by its unique ID.\n\n#### Request Body\n\n- `title` (string): The updated title of the task.\n    \n- `description` (string): The updated description of the task.\n    \n- `priority` (string): The updated priority of the task.\n    \n- `dueDate` (string): The updated due date of the task.\n    \n- `assignedTo` (string): The ID of the user to whom the task is assigned.\n    \n- `team` (string): The ID of the team to which the task belongs.\n    \n- `dependencies` (array): An array of task IDs on which the current task depends.\n    \n\n#### Response\n\nThe response will be in JSON format with the following schema:\n\n``` json\n{\n  \"_id\": \"\",\n  \"title\": \"\",\n  \"description\": \"\",\n  \"priority\": \"\",\n  \"dueDate\": \"\",\n  \"completed\": true,\n  \"assignedTo\": [\"\"],\n  \"team\": \"\",\n  \"dependencies\": [],\n  \"history\": [],\n  \"__v\": 0\n}\n\n ```\n\n- `_id` (string): The unique ID of the updated task.\n    \n- `title` (string): The updated title of the task.\n    \n- `description` (string): The updated description of the task.\n    \n- `priority` (string): The updated priority of the task.\n    \n- `dueDate` (string): The updated due date of the task.\n    \n- `completed` (boolean): Indicates whether the task is completed after the update.\n    \n- `assignedTo` (array of strings): The ID(s) of the user(s) to whom the task is assigned.\n    \n- `team` (string): The ID of the team to which the task belongs.\n    \n- `dependencies` (array): An array of task IDs on which the current task depends.\n    \n- `history` (array): An array of historical records related to the task.\n    \n- `__v` (number): Version key for internal use."
+			},
+			"response": [
+				{
+					"name": "Update a Task",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1ZDUwNTUzYzFmOTk0MDEwZGZmNTciLCJpYXQiOjE3MzE2MTAxMzcsImV4cCI6MTczMTYxMzczN30.SdI8iEfZi1tn6R3WtPRrTHnaQDm5OLKzKKLX3IVNjx0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Updated Task Title\",\n    \"description\": \"Updated task description\",\n    \"priority\": \"medium\",\n    \"dueDate\": \"2024-12-15T00:00:00.000Z\",\n    \"assignedTo\": \"6735d50553c1f994010dff57\",\n    \"team\": \"673611d55ed9e193f5962ead\",\n    \"dependencies\": []\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3006/api/tasks/6736434f667f6ff587c178ef",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"api",
+								"tasks",
+								"6736434f667f6ff587c178ef"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "294"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"126-O90sGbDKIcd3XRw9pgrjxXrFFC4\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 14 Nov 2024 18:49:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"6736434f667f6ff587c178ef\",\n    \"title\": \"Updated Task Title\",\n    \"description\": \"Updated task description\",\n    \"priority\": \"medium\",\n    \"dueDate\": \"2024-12-15T00:00:00.000Z\",\n    \"completed\": false,\n    \"assignedTo\": [\n        \"6735d50553c1f994010dff57\"\n    ],\n    \"team\": \"673611d55ed9e193f5962ead\",\n    \"dependencies\": [],\n    \"history\": [],\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Mark Task As Completed",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1ZDUwNTUzYzFmOTk0MDEwZGZmNTciLCJpYXQiOjE3MzE2MTAxMzcsImV4cCI6MTczMTYxMzczN30.SdI8iEfZi1tn6R3WtPRrTHnaQDm5OLKzKKLX3IVNjx0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"team\": \"673611d55ed9e193f5962ead\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3006/api/tasks/6736434f667f6ff587c178ef/complete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"tasks",
+						"6736434f667f6ff587c178ef",
+						"complete"
+					]
+				},
+				"description": "### PATCH /api/tasks/{taskId}/complete\n\nThis endpoint is used to mark a specific task as complete.\n\n#### Request Body\n\n- team (text, required): The ID of the team to which the task belongs.\n    \n\n#### Response\n\nThe response will be a JSON object with the following properties:\n\n- message (string): A message related to the completion status.\n    \n- task (object): An object representing the completed task with the following properties:\n    \n    - _id (string): The ID of the task.\n        \n    - title (string): The title of the task.\n        \n    - description (string): The description of the task.\n        \n    - priority (string): The priority of the task.\n        \n    - dueDate (string): The due date of the task.\n        \n    - completed (boolean): Indicates whether the task is completed.\n        \n    - assignedTo (array): An array of user IDs to whom the task is assigned.\n        \n    - team (string): The ID of the team to which the task belongs.\n        \n    - dependencies (array): An array of task IDs on which the task depends.\n        \n    - history (array): An array of historical records related to the task.\n        \n    - __v (number): Version control field.\n        \n\n#### Example Response\n\n``` json\n{\n    \"message\": \"\",\n    \"task\": {\n        \"_id\": \"\",\n        \"title\": \"\",\n        \"description\": \"\",\n        \"priority\": \"\",\n        \"dueDate\": \"\",\n        \"completed\": true,\n        \"assignedTo\": [\"\"],\n        \"team\": \"\",\n        \"dependencies\": [],\n        \"history\": [],\n        \"__v\": 0\n    }\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "Mark Task As Completed",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1ZDUwNTUzYzFmOTk0MDEwZGZmNTciLCJpYXQiOjE3MzE2MTAxMzcsImV4cCI6MTczMTYxMzczN30.SdI8iEfZi1tn6R3WtPRrTHnaQDm5OLKzKKLX3IVNjx0",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"team\": \"673611d55ed9e193f5962ead\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3006/api/tasks/6736434f667f6ff587c178ef/complete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"api",
+								"tasks",
+								"6736434f667f6ff587c178ef",
+								"complete"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "338"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"152-yMOgIXOnGVFx4J0vvzMJZBgwKW4\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 14 Nov 2024 18:52:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Task marked as complete\",\n    \"task\": {\n        \"_id\": \"6736434f667f6ff587c178ef\",\n        \"title\": \"Updated Task Title\",\n        \"description\": \"Updated task description\",\n        \"priority\": \"medium\",\n        \"dueDate\": \"2024-12-15T00:00:00.000Z\",\n        \"completed\": true,\n        \"assignedTo\": [\n            \"6735d50553c1f994010dff57\"\n        ],\n        \"team\": \"673611d55ed9e193f5962ead\",\n        \"dependencies\": [],\n        \"history\": [],\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Set Recurring Interval For Task",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1ZDUwNTUzYzFmOTk0MDEwZGZmNTciLCJpYXQiOjE3MzE2MTAxMzcsImV4cCI6MTczMTYxMzczN30.SdI8iEfZi1tn6R3WtPRrTHnaQDm5OLKzKKLX3IVNjx0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"team\": \"673611d55ed9e193f5962ead\",\n    \"recurringInterval\": \"weekly\"  // Or \"daily\", \"monthly\" as per your requirements\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3006/api/tasks/6736434f667f6ff587c178ef/recurring",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"tasks",
+						"6736434f667f6ff587c178ef",
+						"recurring"
+					]
+				},
+				"description": "### Update Recurring Task\n\nThis endpoint is used to update the recurring interval for a specific task.\n\n#### Request Body\n\n- `team` (string): The ID of the team associated with the task.\n    \n- `recurringInterval` (string): The recurring interval for the task. It can be \"weekly\", \"daily\", or \"monthly\" as per the requirements.\n    \n\n#### Response\n\nThe response will be a JSON object with the following properties:\n\n- `message` (string): A message related to the response.\n    \n- `task` (object): An object containing the details of the updated task.\n    \n    - `_id` (string): The ID of the task.\n        \n    - `title` (string): The title of the task.\n        \n    - `description` (string): The description of the task.\n        \n    - `priority` (string): The priority of the task.\n        \n    - `dueDate` (string): The due date of the task.\n        \n    - `completed` (boolean): Indicates whether the task is completed.\n        \n    - `assignedTo` (array): An array of users assigned to the task.\n        \n    - `team` (string): The ID of the team associated with the task.\n        \n    - `dependencies` (array): An array of dependencies for the task.\n        \n    - `history` (array): An array containing the history of the task.\n        \n    - `__v` (number): Version of the task.\n        \n    - `recurringInterval` (string): The updated recurring interval for the task.\n        \n\n#### Example Response\n\n``` json\n{\n  \"message\": \"\",\n  \"task\": {\n    \"_id\": \"\",\n    \"title\": \"\",\n    \"description\": \"\",\n    \"priority\": \"\",\n    \"dueDate\": \"\",\n    \"completed\": true,\n    \"assignedTo\": [\"\"],\n    \"team\": \"\",\n    \"dependencies\": [],\n    \"history\": [],\n    \"__v\": 0,\n    \"recurringInterval\": \"\"\n  }\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "Set Recurring Interval For Task",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1ZDUwNTUzYzFmOTk0MDEwZGZmNTciLCJpYXQiOjE3MzE2MTAxMzcsImV4cCI6MTczMTYxMzczN30.SdI8iEfZi1tn6R3WtPRrTHnaQDm5OLKzKKLX3IVNjx0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"team\": \"673611d55ed9e193f5962ead\",\n    \"recurringInterval\": \"weekly\"  // Or \"daily\", \"monthly\" as per your requirements\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3006/api/tasks/6736434f667f6ff587c178ef/recurring",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"api",
+								"tasks",
+								"6736434f667f6ff587c178ef",
+								"recurring"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "366"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"16e-g2uVrMFMIoHKtcQnguiaGxl+5z0\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 14 Nov 2024 18:57:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Recurring interval set\",\n    \"task\": {\n        \"_id\": \"6736434f667f6ff587c178ef\",\n        \"title\": \"Updated Task Title\",\n        \"description\": \"Updated task description\",\n        \"priority\": \"medium\",\n        \"dueDate\": \"2024-12-15T00:00:00.000Z\",\n        \"completed\": true,\n        \"assignedTo\": [\n            \"6735d50553c1f994010dff57\"\n        ],\n        \"team\": \"673611d55ed9e193f5962ead\",\n        \"dependencies\": [],\n        \"history\": [],\n        \"__v\": 0,\n        \"recurringInterval\": \"weekly\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get incomplete tasks with filters",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1ZDUwNTUzYzFmOTk0MDEwZGZmNTciLCJpYXQiOjE3MzE2MTA4MTgsImV4cCI6MTczMTYxNDQxOH0.XWRsCLd43DERKWQtcYKUT_rRS_FTlLj_LKGDEi6jUBw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3006/api/tasks/incomplete?priority=high&sortBy=dueDate&order=asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"tasks",
+						"incomplete"
+					],
+					"query": [
+						{
+							"key": "priority",
+							"value": "high"
+						},
+						{
+							"key": "sortBy",
+							"value": "dueDate"
+						},
+						{
+							"key": "order",
+							"value": "asc"
+						}
+					]
+				},
+				"description": "The endpoint retrieves a list of incomplete tasks with the specified priority, sorted by due date in ascending order.\n\n### Response\n\nThe response is a JSON object with the following schema:\n\n``` json\n{\n    \"type\": \"object\",\n    \"properties\": {\n        \"message\": {\n            \"type\": \"string\"\n        }\n    }\n}\n\n ```\n\nTo save the \"message\" field from the response to a variable for later use, you can capture the value of \"message\" and store it in a variable within your code for further processing.\n\n### Response\n\nThe response is a JSON object with the following schema:\n\n``` json\n{\n    \"type\": \"object\",\n    \"properties\": {\n        \"message\": {\n            \"type\": \"string\"\n        }\n    }\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "Get incomplete tasks with filters",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1ZDUwNTUzYzFmOTk0MDEwZGZmNTciLCJpYXQiOjE3MzE2MTA4MTgsImV4cCI6MTczMTYxNDQxOH0.XWRsCLd43DERKWQtcYKUT_rRS_FTlLj_LKGDEi6jUBw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3006/api/tasks/incomplete?priority=high&sortBy=dueDate&order=asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"api",
+								"tasks",
+								"incomplete"
+							],
+							"query": [
+								{
+									"key": "priority",
+									"value": "high"
+								},
+								{
+									"key": "sortBy",
+									"value": "dueDate"
+								},
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-UEI37gvs0NMpSMHqViXMjn/Echw\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 14 Nov 2024 19:04:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"No incomplete tasks found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get incomplete tasks with different filter",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1ZDUwNTUzYzFmOTk0MDEwZGZmNTciLCJpYXQiOjE3MzE2MTA4MTgsImV4cCI6MTczMTYxNDQxOH0.XWRsCLd43DERKWQtcYKUT_rRS_FTlLj_LKGDEi6jUBw",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3006/api/tasks/incomplete?priority=medium&sortBy=dueDate&order=asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"tasks",
+						"incomplete"
+					],
+					"query": [
+						{
+							"key": "priority",
+							"value": "medium"
+						},
+						{
+							"key": "sortBy",
+							"value": "dueDate"
+						},
+						{
+							"key": "order",
+							"value": "asc"
+						}
+					]
+				},
+				"description": "# Get Incomplete Tasks\n\nThis endpoint makes an HTTP GET request to retrieve incomplete tasks with the specified priority, sorted by due date in ascending order.\n\n## Request\n\n- Method: GET\n    \n- URL: `http://localhost:3006/api/tasks/incomplete`\n    \n- Query Parameters:\n    \n    - priority (string, required): The priority of the tasks.\n        \n    - sortBy (string, optional): The field to sort the tasks by.\n        \n    - order (string, optional): The order in which the tasks should be sorted.\n        \n\n## Response\n\nUpon a successful request, the server will respond with a status code of 200 and a JSON array containing incomplete tasks. Each task object includes the following properties:\n\n- _id (string): The unique identifier of the task.\n    \n- title (string): The title of the task.\n    \n- description (string): The description of the task.\n    \n- priority (string): The priority of the task.\n    \n- dueDate (string): The due date of the task.\n    \n- completed (boolean): Indicates whether the task is completed.\n    \n- assignedTo (array): An array of objects containing the unique identifier and name of the assignee(s).\n    \n- team (object): An object containing the unique identifier and name of the team associated with the task.\n    \n- dependencies (array): An array of dependencies for the task.\n    \n- history (array): An array of historical records for the task.\n    \n- __v (number): Version key.\n    \n\nExample Response:\n\n``` json\n[\n  {\n    \"_id\": \"\",\n    \"title\": \"\",\n    \"description\": \"\",\n    \"priority\": \"\",\n    \"dueDate\": \"\",\n    \"completed\": true,\n    \"assignedTo\": [\n      {\n        \"_id\": \"\",\n        \"name\": \"\"\n      }\n    ],\n    \"team\": {\n      \"_id\": \"\",\n      \"name\": \"\"\n    },\n    \"dependencies\": [],\n    \"history\": [],\n    \"__v\": 0\n  }\n]\n\n ```"
+			},
+			"response": [
+				{
+					"name": "Get incomplete tasks with different filter",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1ZDUwNTUzYzFmOTk0MDEwZGZmNTciLCJpYXQiOjE3MzE2MTA4MTgsImV4cCI6MTczMTYxNDQxOH0.XWRsCLd43DERKWQtcYKUT_rRS_FTlLj_LKGDEi6jUBw",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3006/api/tasks/incomplete?priority=medium&sortBy=dueDate&order=asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"api",
+								"tasks",
+								"incomplete"
+							],
+							"query": [
+								{
+									"key": "priority",
+									"value": "medium"
+								},
+								{
+									"key": "sortBy",
+									"value": "dueDate"
+								},
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "337"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"151-lOcfF2UQjvcDe0kFqHoe/XYGsQo\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 14 Nov 2024 19:09:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"67364ab98b60b480f9eb1a03\",\n        \"title\": \"Task2\",\n        \"description\": \"Task2 description.\",\n        \"priority\": \"medium\",\n        \"dueDate\": \"2024-12-02T00:00:00.000Z\",\n        \"completed\": false,\n        \"assignedTo\": [\n            {\n                \"_id\": \"6735c9fe53c1f994010dff51\",\n                \"name\": \"John Doe\"\n            }\n        ],\n        \"team\": {\n            \"_id\": \"67364183a60e8e9e397dc3ff\",\n            \"name\": \"Development Team\"\n        },\n        \"dependencies\": [],\n        \"history\": [],\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Delete a Task",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1ZDUwNTUzYzFmOTk0MDEwZGZmNTciLCJpYXQiOjE3MzE2MDkyMDUsImV4cCI6MTczMTYxMjgwNX0.o3Wv7R5nwHtoTZPnIQdLxNRgFCwPfb_AC3Bl-aOFGY0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"team\": \"67364183a60e8e9e397dc3ff\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3006/api/tasks/67364ab98b60b480f9eb1a03",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"tasks",
+						"67364ab98b60b480f9eb1a03"
+					]
+				},
+				"description": "### Delete Task\n\nThis endpoint is used to delete a specific task.\n\n#### Request\n\n- Method: DELETE\n    \n- URL: `http://localhost:3006/api/tasks/67364ab98b60b480f9eb1a03`\n    \n- Headers:\n    \n    - Content-Type: application/json\n        \n- { \"team\": \"67364183a60e8e9e397dc3ff\" }\n    \n\n#### Response\n\nThe response for this request is a JSON object with the following schema:\n\n``` json\n{\n    \"type\": \"object\",\n    \"properties\": {\n        \"message\": {\n            \"type\": \"string\"\n        }\n    }\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "Delete a Task",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1ZDUwNTUzYzFmOTk0MDEwZGZmNTciLCJpYXQiOjE3MzE2MDkyMDUsImV4cCI6MTczMTYxMjgwNX0.o3Wv7R5nwHtoTZPnIQdLxNRgFCwPfb_AC3Bl-aOFGY0",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"team\": \"67364183a60e8e9e397dc3ff\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3006/api/tasks/67364ab98b60b480f9eb1a03",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"api",
+								"tasks",
+								"67364ab98b60b480f9eb1a03"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-urf4l4W7aUjEqcMghGgrIBDtf0M\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 14 Nov 2024 19:12:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Task deleted successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "fetch high-priority task due within next three days",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1ZDUwNTUzYzFmOTk0MDEwZGZmNTciLCJpYXQiOjE3MzE2MDkyMDUsImV4cCI6MTczMTYxMjgwNX0.o3Wv7R5nwHtoTZPnIQdLxNRgFCwPfb_AC3Bl-aOFGY0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3006/api/tasks/upcoming/high-priority",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"tasks",
+						"upcoming",
+						"high-priority"
+					]
+				},
+				"description": "### GET /api/tasks/upcoming/high-priority\n\nThis endpoint retrieves high-priority upcoming tasks.\n\n#### Request\n\nNo request body is required for this request.\n\n#### Response\n\nThe response will be in JSON format with the following schema:\n\n``` json\n{\n    \"type\": \"object\",\n    \"properties\": {\n        \"message\": {\n            \"type\": \"string\"\n        }\n    }\n}\n\n ```\n\nThe response will include a `404` status code and a JSON object with a `message` key."
+			},
+			"response": [
+				{
+					"name": "fetch high-priority task due within next three days",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzM1ZDUwNTUzYzFmOTk0MDEwZGZmNTciLCJpYXQiOjE3MzE2MDkyMDUsImV4cCI6MTczMTYxMjgwNX0.o3Wv7R5nwHtoTZPnIQdLxNRgFCwPfb_AC3Bl-aOFGY0",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3006/api/tasks/upcoming/high-priority",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"api",
+								"tasks",
+								"upcoming",
+								"high-priority"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3f-IH442ZCGZKfez163I8Fr/MlTkUA\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 14 Nov 2024 19:14:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"No high-priority tasks due within the next 3 days\"\n}"
+				}
+			]
+		}
+	]
+}

@@ -1,9 +1,9 @@
-const Team = require('../models/Team'); // Assuming this is the Team model file
+const Team = require('../models/Team'); 
 
 const rbacMiddleware = (roles) => async (req, res, next) => {
     try {
-        const userId = req.user.userId; // Assuming `userId` is available in req.user from auth middleware
-        const teamId = req.body.team || req.params.teamId; // Use team ID from body or params as applicable
+        const userId = req.user.userId; 
+        const teamId = req.body.team || req.params.teamId; 
 
         if (!teamId) {
             return res.status(400).send('Team ID not specified');
