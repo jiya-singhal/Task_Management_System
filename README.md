@@ -23,16 +23,16 @@ This project is a backend API for a Task Management System built with Node.js, E
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/your-username/task-management-system.git](https://github.com/jiya-singhal/Task_Management_System.git)
-   cd task-management-system
+   git clone https://github.com/jiya-singhal/Task_Management_System.git
+   cd Task_Management_System
 
 2. Install dependencies:
    ```bash
    npm install
 3. Create a .env file in the root directory with the following values:
    ```bash
-   PORT=3000
-   MONGODB_URI=your_mongo_connection_string
+   PORT=3006
+   DB_URI=your_mongo_connection_string
    JWT_SECRET=your_jwt_secret
    EMAIL_SERVICE=your_email_service
    EMAIL_USER=your_email@example.com
@@ -40,7 +40,7 @@ This project is a backend API for a Task Management System built with Node.js, E
 4. Start the server:
    ```bash
    npm start
-5. The server will be running at http://localhost:8080
+5. The server will be running at http://localhost:3006
 
 
 ### API Documentation
