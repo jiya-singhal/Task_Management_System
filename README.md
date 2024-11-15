@@ -135,7 +135,7 @@ For the email system to work correctly, make sure to configure the following in 
 
    Replace your-email@gmail.com with your actual Gmail address and your-app-specific-password with the generated app-specific password.
 
-### 5\. **Sample Email Notification
+### 5\. **Sample Email Notification**
 Once the email is sent, the recipient will receive an email with the following format:
 
 
