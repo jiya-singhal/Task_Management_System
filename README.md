@@ -17,7 +17,7 @@ This project is a backend API for a Task Management System built with Node.js, E
 ### Prerequisites
 
 - Node.js and npm
-- MongoDB (Local or Cloud)
+- MongoDB 
 
 ### Installation
 
